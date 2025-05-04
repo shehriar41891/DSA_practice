@@ -53,3 +53,4 @@ for i in range(len(arr)):
         arr.append(0)
     
 print('Array after adding zeros to the end',arr)
+
