@@ -35,3 +35,29 @@ s.add(6)
 print('We popoed ',s.pop())
 
 s.print_stack()
+
+
+#valid parenthesis using stacks 
+
+paren = "()[]}"
+
+class stack:
+    def __init__(self):
+        self.parens = []
+        self.pairs = {')': '(', '}': '{', ']': '['}
+
+        
+    def operation(self,paren):
+        for val in paren:
+            if val in self.pairs.values():
+                self.parens.append(val)
+            elif val in self.pairs:
+                if not self.parens or self.parens[-1]!=self.pairs[val]:
+                    return False
+                self.parens.pop()
+            
+        return True
+    
+valid_s  = stack()
+
+print('The parenthesis is ',valid_s.operation(paren))
